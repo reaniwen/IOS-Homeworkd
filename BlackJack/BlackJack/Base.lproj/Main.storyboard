@@ -16,8 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stack:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHf-oF-Na2">
-                                <rect key="frame" x="16" y="28" width="49" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Stock:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sHf-oF-Na2">
+                                <rect key="frame" x="16" y="28" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -47,6 +47,15 @@
                                 </state>
                                 <connections>
                                     <action selector="hitButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="rk9-Y4-bC3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJ3-4Z-Maf">
+                                <rect key="frame" x="226" y="520" width="33" height="30"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fB8-O1-MSK"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7P-KU-p3O">
@@ -205,24 +214,41 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJ3-4Z-Maf">
-                                <rect key="frame" x="226" y="520" width="33" height="30"/>
-                                <state key="normal" title="Start">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="startButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fB8-O1-MSK"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sum:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bsu-kC-Uql">
+                                <rect key="frame" x="110" y="302" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHC-Oi-drS">
+                                <rect key="frame" x="158" y="302" width="20" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sum:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OI-eH-lTf">
+                                <rect key="frame" x="110" y="80" width="40" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPg-1Z-j44">
+                                <rect key="frame" x="158" y="80" width="20" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="BetLabel" destination="HhK-ft-2vM" id="gen-6q-JRf"/>
                         <outlet property="h1" destination="rnv-K0-Vgc" id="aVz-LF-9kO"/>
                         <outlet property="h2" destination="Yas-qi-Tne" id="QN2-cx-8pf"/>
                         <outlet property="h3" destination="7dL-tM-DaY" id="uEA-db-MsO"/>
                         <outlet property="h4" destination="tTB-jv-6xU" id="UwJ-ha-al1"/>
                         <outlet property="h5" destination="aV9-5s-933" id="I3T-li-Tbo"/>
+                        <outlet property="hSumLabel" destination="ZPg-1Z-j44" id="dxE-UY-R7e"/>
                         <outlet property="hit" destination="1zn-3V-BMq" id="QLL-U8-KF0"/>
                         <outlet property="incBet" destination="Z7P-KU-p3O" id="gZi-0C-cem"/>
                         <outlet property="p1" destination="ZD9-a6-d9i" id="6Mk-P8-k5w"/>
@@ -230,8 +256,10 @@
                         <outlet property="p3" destination="btT-Rg-gqQ" id="reD-fe-hXf"/>
                         <outlet property="p4" destination="FFG-RB-Snl" id="WsC-l3-mNF"/>
                         <outlet property="p5" destination="si6-ZO-QjX" id="FxM-kV-7Cn"/>
+                        <outlet property="pSumLabel" destination="pHC-Oi-drS" id="anI-Fe-dss"/>
                         <outlet property="stand" destination="Rgp-je-iSD" id="ku0-RB-9yL"/>
                         <outlet property="start" destination="lJ3-4Z-Maf" id="kM2-7v-ct1"/>
+                        <outlet property="stockLabel" destination="ZZS-4q-BeV" id="Kjc-fQ-wnm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
