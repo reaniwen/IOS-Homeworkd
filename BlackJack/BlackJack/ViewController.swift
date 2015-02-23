@@ -51,6 +51,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var start: UIButton!
     
     var cardSelected = []
+    
     enum Rank: Int {
         
         case Ace = 1
@@ -73,6 +74,7 @@ class ViewController: UIViewController {
         }
     }
     
+    // enum of color will be deleted
     enum Color: Int{
         case Spade = 1
         case Heart, Diamond, Club
@@ -82,10 +84,59 @@ class ViewController: UIViewController {
             case .Spade: return "♠"
             case .Heart: return "♥"
             case .Diamond: return "♦"
-            default: return "♣"
+            case .Club: return "♣"
             }
         }
     }
+    
+    enum Suit: Int{
+        case Spade = 1
+        case Heart, Diamond, Club
+        
+        func simpleDescription() -> String {
+            switch self{
+            case .Spade: return "♠"
+            case .Heart: return "♥"
+            case .Diamond: return "♦"
+            case .Club: return "♣"
+            }
+        }
+    }
+    
+    struct Card {
+        var rank: Rank
+        var suit: Suit
+        
+        func simpleDescription() -> String {
+            return "The \(rank.simpleDescription()) of \(suit.simpleDescription())"
+        }
+    }
+    
+    struct Deck {
+        var cards: [Card]
+        
+        init(){
+            cards = []
+            for newRank in 1...13{
+                for newSuit in 1...4{
+                    var card: Card = Card(rank: Rank(rawValue: newRank)!, suit: Suit(rawValue: newSuit)!)
+                }
+            }
+        }
+    }
+    
+    struct Shoe {
+        var cards: [Card]
+        
+        init(decks:Int = 1){
+            cards = []
+            for deck in 0..<decks {
+                let tempDeck = Deck();
+                cards += tempDeck.cards
+            }
+        }
+    }
+    
     
 
     override func viewDidLoad() {
