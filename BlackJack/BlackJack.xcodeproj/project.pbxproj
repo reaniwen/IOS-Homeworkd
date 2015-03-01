@@ -13,6 +13,12 @@
 		1742798F1A8FB2C000C4B34F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1742798E1A8FB2C000C4B34F /* Images.xcassets */; };
 		174279921A8FB2C100C4B34F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 174279901A8FB2C100C4B34F /* LaunchScreen.xib */; };
 		1742799E1A8FB2C100C4B34F /* BlackJackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1742799D1A8FB2C100C4B34F /* BlackJackTests.swift */; };
+		178A197F1AA2A606008ADC27 /* Shoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178A197E1AA2A606008ADC27 /* Shoe.swift */; };
+		178A19811AA2ACA8008ADC27 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178A19801AA2ACA8008ADC27 /* Card.swift */; };
+		178A19831AA2ACAE008ADC27 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178A19821AA2ACAE008ADC27 /* Deck.swift */; };
+		178A19851AA2ACB9008ADC27 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178A19841AA2ACB9008ADC27 /* Hand.swift */; };
+		178A19871AA2ACC5008ADC27 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178A19861AA2ACC5008ADC27 /* Player.swift */; };
+		178A19891AA2B96A008ADC27 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178A19881AA2B96A008ADC27 /* StartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,12 @@
 		174279971A8FB2C100C4B34F /* BlackJackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BlackJackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1742799C1A8FB2C100C4B34F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1742799D1A8FB2C100C4B34F /* BlackJackTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackJackTests.swift; sourceTree = "<group>"; };
+		178A197E1AA2A606008ADC27 /* Shoe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shoe.swift; sourceTree = "<group>"; };
+		178A19801AA2ACA8008ADC27 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		178A19821AA2ACAE008ADC27 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		178A19841AA2ACB9008ADC27 /* Hand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
+		178A19861AA2ACC5008ADC27 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		178A19881AA2B96A008ADC27 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,7 +90,13 @@
 			isa = PBXGroup;
 			children = (
 				174279871A8FB2C000C4B34F /* AppDelegate.swift */,
+				178A19801AA2ACA8008ADC27 /* Card.swift */,
+				178A19821AA2ACAE008ADC27 /* Deck.swift */,
+				178A197E1AA2A606008ADC27 /* Shoe.swift */,
+				178A19841AA2ACB9008ADC27 /* Hand.swift */,
+				178A19861AA2ACC5008ADC27 /* Player.swift */,
 				174279891A8FB2C000C4B34F /* ViewController.swift */,
+				178A19881AA2B96A008ADC27 /* StartViewController.swift */,
 				1742798B1A8FB2C000C4B34F /* Main.storyboard */,
 				1742798E1A8FB2C000C4B34F /* Images.xcassets */,
 				174279901A8FB2C100C4B34F /* LaunchScreen.xib */,
@@ -212,8 +230,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				178A197F1AA2A606008ADC27 /* Shoe.swift in Sources */,
+				178A19891AA2B96A008ADC27 /* StartViewController.swift in Sources */,
 				1742798A1A8FB2C000C4B34F /* ViewController.swift in Sources */,
+				178A19851AA2ACB9008ADC27 /* Hand.swift in Sources */,
+				178A19831AA2ACAE008ADC27 /* Deck.swift in Sources */,
+				178A19871AA2ACC5008ADC27 /* Player.swift in Sources */,
 				174279881A8FB2C000C4B34F /* AppDelegate.swift in Sources */,
+				178A19811AA2ACA8008ADC27 /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +429,7 @@
 				174279A31A8FB2C100C4B34F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		174279A41A8FB2C100C4B34F /* Build configuration list for PBXNativeTarget "BlackJackTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +438,7 @@
 				174279A61A8FB2C100C4B34F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
