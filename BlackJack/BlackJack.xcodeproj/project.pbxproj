@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		173DF5C81AA40B970089C955 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173DF5C71AA40B970089C955 /* StartViewController.swift */; };
+		173DF5CA1AA414640089C955 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173DF5C91AA414640089C955 /* Singleton.swift */; };
+		173DF5CC1AA4AEA40089C955 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173DF5CB1AA4AEA40089C955 /* GameViewController.swift */; };
 		174279881A8FB2C000C4B34F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174279871A8FB2C000C4B34F /* AppDelegate.swift */; };
 		1742798A1A8FB2C000C4B34F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 174279891A8FB2C000C4B34F /* ViewController.swift */; };
 		1742798D1A8FB2C000C4B34F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1742798B1A8FB2C000C4B34F /* Main.storyboard */; };
@@ -18,7 +21,6 @@
 		178A19831AA2ACAE008ADC27 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178A19821AA2ACAE008ADC27 /* Deck.swift */; };
 		178A19851AA2ACB9008ADC27 /* Hand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178A19841AA2ACB9008ADC27 /* Hand.swift */; };
 		178A19871AA2ACC5008ADC27 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178A19861AA2ACC5008ADC27 /* Player.swift */; };
-		178A19891AA2B96A008ADC27 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178A19881AA2B96A008ADC27 /* StartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +34,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		173DF5C71AA40B970089C955 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		173DF5C91AA414640089C955 /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
+		173DF5CB1AA4AEA40089C955 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		174279821A8FB2C000C4B34F /* BlackJack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlackJack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		174279861A8FB2C000C4B34F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		174279871A8FB2C000C4B34F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,7 +52,6 @@
 		178A19821AA2ACAE008ADC27 /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		178A19841AA2ACB9008ADC27 /* Hand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Hand.swift; sourceTree = "<group>"; };
 		178A19861AA2ACC5008ADC27 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		178A19881AA2B96A008ADC27 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +100,10 @@
 				178A19841AA2ACB9008ADC27 /* Hand.swift */,
 				178A19861AA2ACC5008ADC27 /* Player.swift */,
 				174279891A8FB2C000C4B34F /* ViewController.swift */,
-				178A19881AA2B96A008ADC27 /* StartViewController.swift */,
+				173DF5C71AA40B970089C955 /* StartViewController.swift */,
+				173DF5CB1AA4AEA40089C955 /* GameViewController.swift */,
 				1742798B1A8FB2C000C4B34F /* Main.storyboard */,
+				173DF5C91AA414640089C955 /* Singleton.swift */,
 				1742798E1A8FB2C000C4B34F /* Images.xcassets */,
 				174279901A8FB2C100C4B34F /* LaunchScreen.xib */,
 				174279851A8FB2C000C4B34F /* Supporting Files */,
@@ -230,8 +236,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				173DF5CC1AA4AEA40089C955 /* GameViewController.swift in Sources */,
 				178A197F1AA2A606008ADC27 /* Shoe.swift in Sources */,
-				178A19891AA2B96A008ADC27 /* StartViewController.swift in Sources */,
+				173DF5CA1AA414640089C955 /* Singleton.swift in Sources */,
+				173DF5C81AA40B970089C955 /* StartViewController.swift in Sources */,
 				1742798A1A8FB2C000C4B34F /* ViewController.swift in Sources */,
 				178A19851AA2ACB9008ADC27 /* Hand.swift in Sources */,
 				178A19831AA2ACAE008ADC27 /* Deck.swift in Sources */,

@@ -11,5 +11,12 @@ import Foundation
 class Player{
     var hands: [Hand] = []
     var name: String = ""
+    var money: Int = 100
+    var shown: Bool = false
+    
+    init(name: String){
+        hands.append(Hand())
+        self.name = name
+    }
     
 }

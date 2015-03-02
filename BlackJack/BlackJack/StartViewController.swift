@@ -2,44 +2,51 @@
 //  StartViewController.swift
 //  BlackJack
 //
-//  Created by Rean on 2/28/15.
+//  Created by Rean on 3/1/15.
 //  Copyright (c) 2015 Rean. All rights reserved.
 //
 
 import UIKit
 
-class StartViewController: UIViewController,UIPickerViewDataSource,UIPickerViewDelegate {
+class StartViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    @IBOutlet weak var playerPicker: UIPickerView!
     @IBOutlet weak var myLabel: UILabel!
-    let pickerData = ["Mozzarella","Gorgonzola","Provolone","Brie","Maytag Blue","Sharp Cheddar","Monterrey Jack","Stilton","Gouda","Goat Cheese", "Asiago"]
+    @IBOutlet weak var playerPicker: UIPickerView!
+    @IBOutlet weak var startButton: UIButton!
     
+    let pickerData = [
+        ["1","2","3","4","5","6"],
+        ["1","2","3","4"]
+    ]
+    
+    var sharedData:Singleton = Singleton.sharedInstance
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        playerPicker.dataSource = self
-        playerPicker.delegate = self
-    }
 
+        playerPicker.delegate = self
+        playerPicker.dataSource = self
+        
+        playerPicker.selectRow(1, inComponent: 0, animated: false)
+        playerPicker.selectRow(2, inComponent: 1, animated: true)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func pickerView(pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-        let titleData = pickerData[row]
-        var myTitle = NSAttributedString(string: titleData, attributes: [NSFontAttributeName:UIFont(name: "Georgia", size: 15.0)!,NSForegroundColorAttributeName:UIColor.blueColor()])
-        return myTitle
+    
+    func updateLabel(){
+        let playerNum = pickerData[0][playerPicker.selectedRowInComponent(0)]
+        let decks = pickerData[1][playerPicker.selectedRowInComponent(1)]
+        myLabel.text = "there are " + playerNum + " players and " + decks + "decks"
     }
     
-
-    //MARK: Delegates
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        return pickerData[row]
-    }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        myLabel.text = pickerData[row]
+    @IBAction func startAction(sender: AnyObject) {
+        sharedData.textField = "hello world!"
     }
     /*
     // MARK: - Navigation
@@ -51,13 +58,21 @@ class StartViewController: UIViewController,UIPickerViewDataSource,UIPickerViewD
     }
     */
     
-    //MARK: - Delegates and data sources
-    //MARK: Data Sources
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return pickerData.count
     }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData[component].count
+    }
 
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        return pickerData[component][row]
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        updateLabel()
+    }
 }
+
+//get toturial at http://makeapppie.com/2014/09/18/swift-swift-implementing-picker-views/

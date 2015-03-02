@@ -16,6 +16,7 @@ class Deck {
         for newRank in 1...13{
             for newSuit in 1...4{
                 var card: Card = Card(rank: Rank(rawValue: newRank)!, suit: Suit(rawValue: newSuit)!)
+                cards.append(card)
             }
         }
     }

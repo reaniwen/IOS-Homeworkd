@@ -9,6 +9,14 @@
 import Foundation
 
 class Hand{
-    var cards:[Card] = []
+    var cards:[Card]
+    var sum:Int
+    var bet:Int
+    
+    init(){
+        cards = []
+        sum = 0
+        bet = 1
+    }
     
 }

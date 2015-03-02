@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var stockLabel: UILabel!
     @IBOutlet weak var BetLabel: UILabel!
     
+    @IBOutlet weak var testLabel: UILabel!
+    let sharedData:Singleton = Singleton.sharedInstance
+    
     var round: Int = 0
     
     var hContainAce: Bool = false
@@ -39,6 +42,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var h3: UILabel!
     @IBOutlet weak var h4: UILabel!
     @IBOutlet weak var h5: UILabel!
+    
     @IBOutlet weak var p1: UILabel!
     @IBOutlet weak var p2: UILabel!
     @IBOutlet weak var p3: UILabel!
@@ -52,20 +56,7 @@ class ViewController: UIViewController {
     
     var cardSelected = []
     
-    // enum of color will be deleted
-    enum Color: Int{
-        case Spade = 1
-        case Heart, Diamond, Club
-        
-        func simpleDescription() -> String {
-            switch self{
-            case .Spade: return "♠"
-            case .Heart: return "♥"
-            case .Diamond: return "♦"
-            case .Club: return "♣"
-            }
-        }
-    }
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +64,9 @@ class ViewController: UIViewController {
         hidButton(hit, bButton: stand, cButton: incBet, dButton: start)
         initCards()
         updateLabels()
+        
+        testLabel.text = sharedData.textField
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -166,7 +160,7 @@ class ViewController: UIViewController {
         if let nume = Rank(rawValue:num){
             numstr = nume.simpleDescription()
         }
-        if let cole = Color(rawValue: col){
+        if let cole = Suit(rawValue: col){
             colstr = cole.simpleDescription()
         }
         var resstr: String
@@ -328,5 +322,14 @@ class ViewController: UIViewController {
         }
     }
         
+}
+
+extension Array{
+    mutating func shuffle(){
+        for i in 0..<(count-1){
+            let j = Int(arc4random_uniform(UInt32(count-i))) + i
+            swap(&self[i], &self[j])
+        }
+    }
 }
 
