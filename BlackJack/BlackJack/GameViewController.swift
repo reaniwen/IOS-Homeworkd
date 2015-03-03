@@ -166,6 +166,11 @@ class GameViewController: UIViewController {
         giveOneCardtoDealer(0)
         giveOneCardtoDealer(0)
         
+        //hide card and score
+        dealerSumLabel.text = "sum:"
+        let index: String.Index = advance(dealerCardsLabel.text!.startIndex, 9)
+        dealerCardsLabel.text = dealerCardsLabel.text!.substringToIndex(index) + " HIDE"
+        
         //give two cards to everyplayer
         for p in 0 ..< playerNum{
             giveOneCard(p, h: 0)
@@ -266,6 +271,15 @@ class GameViewController: UIViewController {
     }
     
     func showResult(){
+        
+        //show score of dealer
+        dealerSumLabel.text = "sum: \(dealerPlayer.hands[0].sum)"
+        let index: String.Index = advance(dealerCardsLabel.text!.startIndex, 9)
+        dealerCardsLabel.text = dealerCardsLabel.text!.substringToIndex(index)
+        for card in dealerPlayer.hands[0].cards{
+            dealerCardsLabel.text! += " \(card.simpleDescription())"
+        }
+        
         for i in 0 ..< playerNum{
             if players[i].hands[0].isBS{
                 //lose
