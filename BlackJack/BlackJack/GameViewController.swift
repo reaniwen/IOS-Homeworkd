@@ -56,6 +56,8 @@ class GameViewController: UIViewController {
     @IBOutlet weak var p6BetText: UITextField!
     @IBOutlet weak var p6CardsLabel: UILabel!
     
+    @IBOutlet weak var restartBtn: UIButton!
+    
     @IBOutlet weak var currPLabel: UILabel!
     
     var playersUI:[PlayerUI] = []
@@ -102,7 +104,7 @@ class GameViewController: UIViewController {
         testLabel.text = "\(sharedData.playerNum) + \(sharedData.deckNum)+ \(playerNum)"
         hitBtn.enabled = false
         standBtn.enabled = false
-        
+        restartBtn.hidden = true
     }
     
     func playerMapping(i: Int){
@@ -110,15 +112,24 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func startAction(sender: AnyObject) {
+        gameRound += 1
         hitBtn.enabled = true
         standBtn.enabled = true
         startBtn.enabled = false
+        for i in 0 ..< playerNum{
+            playersUI[i].betText.enabled = false
+            players[i].hands[0].bet = playersUI[i].betText.text.toInt()!
+            players[i].money -= players[i].hands[0].bet
+            playersUI[i].moneyLabel.text = "$\(players[i].money)"
+        }
         giveTwoCards()
         
     }
+    
     @IBAction func hitAction(sender: AnyObject) {
         giveOneCard(currPlayer, h: 0)
     }
+    
     @IBAction func standAction(sender: AnyObject) {
         nextPlayer()
         //or all stand and wait for AI move
@@ -132,6 +143,9 @@ class GameViewController: UIViewController {
         updateScore(p, h: h, poker: poker)
         currPoker += 1
         players[p].hands[h].isBS = isBusted(p)
+        if players[p].hands[h].isBS {
+            nextPlayer()
+        }
     }
     
     func giveOneCardtoDealer(h: Int){
@@ -141,6 +155,10 @@ class GameViewController: UIViewController {
         dealerCardsLabel.text?.extend(poker.simpleDescription())
         updateDealerScore(0,poker: poker)
         currPoker += 1
+        dealerPlayer.hands[h].isBS = isDealerBusted()
+//        if dealerPlayer.hands[h].isBS{
+//            showResult()
+//        }
     }
     
     func giveTwoCards(){
@@ -153,15 +171,15 @@ class GameViewController: UIViewController {
             giveOneCard(p, h: 0)
             giveOneCard(p, h: 0)
         }
+        currPLabel.text = "Player1"
         isBlackJack(0)
-        //judge blackjack for the first player
     }
     
     func nextPlayer(){
         println("\(currPlayer), \(playerNum)")
         if currPlayer < playerNum - 1{
             currPlayer += 1
-            currPLabel.text = "player\(currPlayer+1)"
+            currPLabel.text = "Player\(currPlayer+1)"
             isBlackJack(currPlayer)
         }else{
             aiMove()
@@ -171,7 +189,14 @@ class GameViewController: UIViewController {
     func isBusted(p: Int) -> Bool{
         if players[p].hands[0].sum > 21{
             playersUI[p].sumLabel.text?.extend(" Busted!")
-            nextPlayer()
+            return true
+        }
+        return false
+    }
+    
+    func isDealerBusted() -> Bool{
+        if dealerPlayer.hands[0].sum > 21{
+            dealerSumLabel.text?.extend(" Busted!")
             return true
         }
         return false
@@ -249,18 +274,45 @@ class GameViewController: UIViewController {
                 playersUI[i].sumLabel.text?.extend(" Lose!")
             }else if players[i].hands[0].isBJ{
                 if dealerPlayer.hands[0].isBJ{
-                    //tie
+                    players[i].money += players[i].hands[0].bet
                 }else{
-                    //win
+                    players[i].money += (players[i].hands[0].bet * 2)
+                    playersUI[i].moneyLabel.text = "$\(players[i].money)"
                 }
-            }else if players[i].hands[0].sum > dealerPlayer.hands[0].sum && !players[i].hands[0].isBS{
-                //win
+            }else if dealerPlayer.hands[0].isBS{
+                players[i].money += (players[i].hands[0].bet * 2)
                 playersUI[i].sumLabel.text?.extend(" Win!")
+                playersUI[i].moneyLabel.text = "$\(players[i].money)"
+            }else if players[i].hands[0].sum > dealerPlayer.hands[0].sum && !players[i].hands[0].isBS{
+                players[i].money += (players[i].hands[0].bet * 2)
+                playersUI[i].sumLabel.text?.extend(" Win!")
+                playersUI[i].moneyLabel.text = "$\(players[i].money)"
             }
         }
+        restartBtn.hidden = false
         // start a new round
     }
 
+    @IBAction func restartAction(sender: AnyObject) {
+        restartBtn.hidden = true
+        dealerPlayer.hands = [Hand()]
+        dealerPlayer.money = 100
+        dealerCardsLabel.text = "Cards:"
+        dealerSumLabel.text = "sum:"
+        for i in 0 ..< playerNum{
+            players[i].hands = [Hand()]
+            playersUI[i].betText.text = "1"
+            playersUI[i].cardsLabel.text = "Cards:"
+            playersUI[i].sumLabel.text = "sum:"
+        }
+        currPlayer = 0
+        startBtn.enabled = true
+        if gameRound == 5{
+            shoe.cards.shuffle()
+            currPoker = 0
+        }
+    }
+    
     @IBAction func resetGameAction(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }

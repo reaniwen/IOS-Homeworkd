@@ -405,7 +405,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dr-nt-xUW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8dr-nt-xUW">
                                 <rect key="frame" x="220" y="124" width="39" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -446,7 +446,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPG-oV-Edp">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPG-oV-Edp">
                                 <rect key="frame" x="220" y="182" width="39" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -457,7 +457,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bt2-qf-mFB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bt2-qf-mFB">
                                 <rect key="frame" x="220" y="240" width="39" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -468,7 +468,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ths-te-SWt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ths-te-SWt">
                                 <rect key="frame" x="220" y="298" width="39" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -479,7 +479,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bph-St-nKQ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bph-St-nKQ">
                                 <rect key="frame" x="220" y="356" width="39" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -490,7 +490,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8z-MO-NeH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o8z-MO-NeH">
                                 <rect key="frame" x="220" y="418" width="39" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -597,12 +597,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="♠A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxt-by-yX8">
-                                <rect key="frame" x="86" y="478" width="115" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a4h-YV-Pvf">
+                                <rect key="frame" x="135" y="484" width="50" height="30"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="restartAction:" destination="fOs-mD-Qjs" eventType="touchUpInside" id="qYI-At-hj3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -610,6 +613,7 @@
                             <constraint firstItem="5Pg-kN-Mc8" firstAttribute="leading" secondItem="apl-7U-s7E" secondAttribute="leading" id="3aB-7s-RVD"/>
                             <constraint firstItem="Him-5l-JpB" firstAttribute="top" secondItem="d1A-n7-aqT" secondAttribute="bottom" constant="8" symbolic="YES" id="4nn-Bq-BWZ"/>
                             <constraint firstAttribute="centerX" secondItem="HiT-zq-2ET" secondAttribute="centerX" constant="-82.5" id="4pP-cJ-e1O"/>
+                            <constraint firstItem="5lw-1g-yEh" firstAttribute="leading" secondItem="bph-St-nKQ" secondAttribute="trailing" constant="8" id="5I7-n0-je5"/>
                             <constraint firstItem="apl-7U-s7E" firstAttribute="leading" secondItem="riO-LH-Qj9" secondAttribute="leadingMargin" constant="11" id="6IB-2E-Lar"/>
                             <constraint firstItem="gPG-ru-Wlk" firstAttribute="top" secondItem="Zkg-H0-97s" secondAttribute="bottom" constant="8" symbolic="YES" id="6ZV-T0-DUJ"/>
                             <constraint firstItem="8dr-nt-xUW" firstAttribute="top" secondItem="apl-7U-s7E" secondAttribute="bottom" constant="8" symbolic="YES" id="7fz-r6-USc"/>
@@ -623,7 +627,9 @@
                             <constraint firstItem="YKr-C2-CZg" firstAttribute="top" secondItem="d1A-n7-aqT" secondAttribute="bottom" constant="8" symbolic="YES" id="EO6-CS-DNW"/>
                             <constraint firstItem="VYw-3a-gY6" firstAttribute="baseline" secondItem="aEP-LA-Is3" secondAttribute="baseline" id="FLl-JX-5cj"/>
                             <constraint firstItem="S3p-8x-LFH" firstAttribute="leading" secondItem="d1A-n7-aqT" secondAttribute="leading" id="FMu-ZF-ACE"/>
+                            <constraint firstItem="sLJ-Xp-iks" firstAttribute="leading" secondItem="8dr-nt-xUW" secondAttribute="trailing" constant="8" id="G6X-MV-YrC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="apl-7U-s7E" secondAttribute="trailing" constant="8" id="GSw-WC-CkH"/>
+                            <constraint firstItem="gnb-UN-zaQ" firstAttribute="leading" secondItem="bt2-qf-mFB" secondAttribute="trailing" constant="8" id="GfR-Jq-hBD"/>
                             <constraint firstItem="ths-te-SWt" firstAttribute="top" secondItem="nev-Oh-GEp" secondAttribute="bottom" constant="8" symbolic="YES" id="HXx-Oy-5WA"/>
                             <constraint firstItem="ZuY-AN-vo0" firstAttribute="top" secondItem="yea-11-WH3" secondAttribute="bottom" constant="8" symbolic="YES" id="Hd4-3U-Z7J"/>
                             <constraint firstAttribute="centerY" secondItem="Z7n-UF-G5w" secondAttribute="centerY" constant="-249" id="I2H-xz-RFL"/>
@@ -632,6 +638,7 @@
                             <constraint firstItem="Zkg-H0-97s" firstAttribute="leading" secondItem="5Pg-kN-Mc8" secondAttribute="leading" id="KUr-vz-yrk"/>
                             <constraint firstItem="aEP-LA-Is3" firstAttribute="top" secondItem="HTF-wO-mze" secondAttribute="bottom" constant="8" symbolic="YES" id="Lz3-FW-q2u"/>
                             <constraint firstItem="Zkg-H0-97s" firstAttribute="top" secondItem="Eak-UM-LLE" secondAttribute="bottom" constant="3" id="MU0-X7-nOS"/>
+                            <constraint firstItem="peY-SJ-I5E" firstAttribute="leading" secondItem="ths-te-SWt" secondAttribute="trailing" constant="8" id="N1g-Us-kEQ"/>
                             <constraint firstItem="d1A-n7-aqT" firstAttribute="top" secondItem="RYO-jT-OjX" secondAttribute="bottom" constant="8" symbolic="YES" id="Oan-te-cdb"/>
                             <constraint firstItem="Zkg-H0-97s" firstAttribute="top" secondItem="49M-TR-2hj" secondAttribute="bottom" constant="8" symbolic="YES" id="OoZ-wC-98N"/>
                             <constraint firstItem="d1A-n7-aqT" firstAttribute="trailing" secondItem="5lw-1g-yEh" secondAttribute="trailing" id="OyE-bb-rIM"/>
@@ -644,8 +651,10 @@
                             <constraint firstItem="S3p-8x-LFH" firstAttribute="trailing" secondItem="Him-5l-JpB" secondAttribute="trailing" id="WwC-lA-ayo"/>
                             <constraint firstAttribute="centerX" secondItem="AT5-0P-ujF" secondAttribute="centerX" constant="-0.5" id="XAd-QM-wGQ"/>
                             <constraint firstItem="S3p-8x-LFH" firstAttribute="top" secondItem="o8z-MO-NeH" secondAttribute="bottom" constant="4" id="aQ3-vk-1gh"/>
+                            <constraint firstItem="Eak-UM-LLE" firstAttribute="leading" secondItem="mPG-oV-Edp" secondAttribute="trailing" constant="8" id="cOy-VJ-wmh"/>
                             <constraint firstItem="yea-11-WH3" firstAttribute="leading" secondItem="nev-Oh-GEp" secondAttribute="leading" id="dc0-dq-vv5"/>
                             <constraint firstItem="mPG-oV-Edp" firstAttribute="top" secondItem="5Pg-kN-Mc8" secondAttribute="bottom" constant="8" symbolic="YES" id="e6e-Bp-WV4"/>
+                            <constraint firstItem="Him-5l-JpB" firstAttribute="leading" secondItem="o8z-MO-NeH" secondAttribute="trailing" constant="8" id="emd-xc-NtE"/>
                             <constraint firstItem="yea-11-WH3" firstAttribute="top" secondItem="peY-SJ-I5E" secondAttribute="bottom" constant="3" id="erz-x9-v7e"/>
                             <constraint firstItem="5Pg-kN-Mc8" firstAttribute="trailing" secondItem="Eak-UM-LLE" secondAttribute="trailing" id="f1k-UR-as9"/>
                             <constraint firstItem="5Pg-kN-Mc8" firstAttribute="top" secondItem="sLJ-Xp-iks" secondAttribute="bottom" constant="3" id="h3O-l3-2a4"/>
@@ -658,7 +667,6 @@
                             <constraint firstAttribute="trailingMargin" secondItem="HiT-zq-2ET" secondAttribute="trailing" constant="41" id="k4X-zt-4CQ"/>
                             <constraint firstItem="bt2-qf-mFB" firstAttribute="top" secondItem="Zkg-H0-97s" secondAttribute="bottom" constant="8" symbolic="YES" id="k9x-Y3-zyR"/>
                             <constraint firstItem="E7q-aq-mL6" firstAttribute="top" secondItem="5Pg-kN-Mc8" secondAttribute="bottom" constant="8" symbolic="YES" id="o6P-VI-nfY"/>
-                            <constraint firstItem="vxt-by-yX8" firstAttribute="top" secondItem="S3p-8x-LFH" secondAttribute="bottom" constant="14" id="ppo-p0-JIt"/>
                             <constraint firstItem="RYO-jT-OjX" firstAttribute="top" secondItem="yea-11-WH3" secondAttribute="bottom" constant="8" symbolic="YES" id="pt9-Qn-JC5"/>
                             <constraint firstItem="bph-St-nKQ" firstAttribute="top" secondItem="yea-11-WH3" secondAttribute="bottom" constant="8" symbolic="YES" id="r1D-f5-P8v"/>
                             <constraint firstItem="Zkg-H0-97s" firstAttribute="trailing" secondItem="gnb-UN-zaQ" secondAttribute="trailing" id="r3H-9F-5qz"/>
@@ -708,6 +716,7 @@
                         <outlet property="p6NameLabel" destination="YKr-C2-CZg" id="GDa-mU-PHs"/>
                         <outlet property="p6SumLabel" destination="gLN-hK-nBT" id="aJt-ly-yk8"/>
                         <outlet property="resetBtn" destination="VYw-3a-gY6" id="1ey-h4-hA1"/>
+                        <outlet property="restartBtn" destination="a4h-YV-Pvf" id="RFh-vk-2Mz"/>
                         <outlet property="standBtn" destination="HiT-zq-2ET" id="7Bq-5X-hcb"/>
                         <outlet property="startBtn" destination="aEP-LA-Is3" id="bCp-t5-3ZG"/>
                         <outlet property="testLabel" destination="QUh-xo-e99" id="IaW-Uw-DDG"/>
