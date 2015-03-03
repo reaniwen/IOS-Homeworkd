@@ -19,4 +19,8 @@ class Player{
         self.name = name
     }
     
+    init(){
+        hands.append(Hand())
+    }
+    
 }

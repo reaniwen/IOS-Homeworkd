@@ -20,7 +20,8 @@ class StartViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     ]
     
     var sharedData:Singleton = Singleton.sharedInstance
-    
+    var playerNum:String = "2"
+    var decks:String = "3"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,10 @@ class StartViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         playerPicker.dataSource = self
         
         playerPicker.selectRow(1, inComponent: 0, animated: false)
-        playerPicker.selectRow(2, inComponent: 1, animated: true)
+        playerPicker.selectRow(2, inComponent: 1, animated: false)
+        
+        updateLabel()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,14 +43,20 @@ class StartViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     
     func updateLabel(){
-        let playerNum = pickerData[0][playerPicker.selectedRowInComponent(0)]
-        let decks = pickerData[1][playerPicker.selectedRowInComponent(1)]
-        myLabel.text = "there are " + playerNum + " players and " + decks + "decks"
+        playerNum = pickerData[0][playerPicker.selectedRowInComponent(0)]
+        decks = pickerData[1][playerPicker.selectedRowInComponent(1)]
+        sharedData.playerNum = playerNum.toInt()!
+        sharedData.deckNum = decks.toInt()!
+        myLabel.text = "there are \(sharedData.playerNum) players and \(sharedData.deckNum) decks"
     }
     
     
     @IBAction func startAction(sender: AnyObject) {
+        updateLabel()
         sharedData.textField = "hello world!"
+        sharedData.playerNum = playerNum.toInt()!
+        sharedData.deckNum = decks.toInt()!
+
     }
     /*
     // MARK: - Navigation

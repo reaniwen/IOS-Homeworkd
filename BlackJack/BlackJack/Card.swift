@@ -48,8 +48,14 @@ enum Suit: Int{
 struct Card {
     var rank: Rank
     var suit: Suit
-    
+
+//    init(rank: Rank, suit: Suit){
+//        self.rank = rank
+//        self.suit = suit
+//    }
+
     func simpleDescription() -> String {
-        return "The \(rank.simpleDescription()) of \(suit.simpleDescription())"
+        return " \(suit.simpleDescription())\(rank.simpleDescription())"
     }
+    
 }
