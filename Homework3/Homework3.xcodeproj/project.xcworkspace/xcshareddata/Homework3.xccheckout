@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>B8E2EE19-ACE5-461E-B085-CFCF54042183</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Homework3</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3912F8A876CD4ABA7BD3E3C41B983B7963B1472F</key>
+		<string>https://github.com/reaniwen/IOS-Homeworkd.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Homework3/Homework3.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3912F8A876CD4ABA7BD3E3C41B983B7963B1472F</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/reaniwen/IOS-Homeworkd.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3912F8A876CD4ABA7BD3E3C41B983B7963B1472F</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3912F8A876CD4ABA7BD3E3C41B983B7963B1472F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>IOS-Homeworkd</string>
+		</dict>
+	</array>
+</dict>
+</plist>

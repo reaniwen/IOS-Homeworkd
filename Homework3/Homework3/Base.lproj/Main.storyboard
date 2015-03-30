@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="13F1066" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="Homework3" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p9C-3q-eKg">
+                                <rect key="frame" x="36" y="144" width="280" height="150"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clubs10" translatesAutoresizingMaskIntoConstraints="NO" id="g4r-qS-Pbf" userLabel="Card1">
+                                        <rect key="frame" x="0.0" y="29" width="83" height="121"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="83" id="HX7-fX-wj3"/>
+                                            <constraint firstAttribute="height" constant="121" id="b2Q-u1-bW2"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Clubs10" translatesAutoresizingMaskIntoConstraints="NO" id="rkk-TE-nke" userLabel="Card2">
+                                        <rect key="frame" x="43" y="29" width="83" height="121"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="83" id="MD7-bB-skA"/>
+                                            <constraint firstAttribute="height" constant="121" id="bTs-oT-YnN"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clubs10" translatesAutoresizingMaskIntoConstraints="NO" id="h4v-bm-s0r" userLabel="Card3">
+                                        <rect key="frame" x="99" y="29" width="83" height="121"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="83" id="ckJ-DC-OHv"/>
+                                            <constraint firstAttribute="height" constant="121" id="dYS-aM-2UX"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Clubs10" translatesAutoresizingMaskIntoConstraints="NO" id="jEO-uy-JXq" userLabel="Card4">
+                                        <rect key="frame" x="142" y="29" width="83" height="121"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="121" id="DmJ-FL-11g"/>
+                                            <constraint firstAttribute="width" constant="83" id="oiN-kL-AuQ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Clubs10" translatesAutoresizingMaskIntoConstraints="NO" id="YBN-Ju-cww" userLabel="Card5">
+                                        <rect key="frame" x="197" y="29" width="83" height="121"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="121" id="J8z-WT-4HH"/>
+                                            <constraint firstAttribute="width" constant="83" id="yUU-EQ-EEj"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="3li-Bg-nW7"/>
+                                    <constraint firstAttribute="bottom" secondItem="YBN-Ju-cww" secondAttribute="bottom" id="Kfe-SI-1Wt"/>
+                                    <constraint firstAttribute="bottom" secondItem="g4r-qS-Pbf" secondAttribute="bottom" id="OA4-eb-90u"/>
+                                    <constraint firstAttribute="bottom" secondItem="h4v-bm-s0r" secondAttribute="bottom" id="OXj-11-Hec"/>
+                                    <constraint firstItem="g4r-qS-Pbf" firstAttribute="leading" secondItem="p9C-3q-eKg" secondAttribute="leading" id="SyX-Oi-i3p"/>
+                                    <constraint firstAttribute="bottom" secondItem="jEO-uy-JXq" secondAttribute="bottom" id="UYJ-Tl-842"/>
+                                    <constraint firstItem="rkk-TE-nke" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="g4r-qS-Pbf" secondAttribute="trailing" constant="-40" id="V7B-BJ-Vjl"/>
+                                    <constraint firstItem="h4v-bm-s0r" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="rkk-TE-nke" secondAttribute="trailing" constant="-40" id="XYD-Rg-1UM"/>
+                                    <constraint firstItem="jEO-uy-JXq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="h4v-bm-s0r" secondAttribute="trailing" constant="-40" id="ZnS-8Y-iPd"/>
+                                    <constraint firstAttribute="bottom" secondItem="rkk-TE-nke" secondAttribute="bottom" id="eU0-dg-CWO"/>
+                                    <constraint firstAttribute="height" constant="150" id="jxD-mv-Tgp"/>
+                                    <constraint firstItem="YBN-Ju-cww" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jEO-uy-JXq" secondAttribute="leading" constant="40" id="kD1-VB-TOr"/>
+                                    <constraint firstAttribute="trailing" secondItem="YBN-Ju-cww" secondAttribute="trailing" id="nRj-rt-Uz8"/>
+                                    <constraint firstAttribute="centerX" secondItem="h4v-bm-s0r" secondAttribute="centerX" id="oE8-yG-xM5"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q09-07-n9q">
+                                <rect key="frame" x="56" y="321" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="p9C-3q-eKg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="FiR-f0-zEG"/>
+                            <constraint firstItem="p9C-3q-eKg" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="124" id="sms-uK-dtT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="testImageview" destination="q09-07-n9q" id="LxJ-UW-atl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="114" y="157"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Clubs10" width="50" height="73"/>
+    </resources>
+</document>
