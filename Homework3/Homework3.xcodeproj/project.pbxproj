@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1701F2A81AC9F4B200B163DD /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1701F2A71AC9F4B200B163DD /* StartViewController.swift */; };
+		1701F2AA1AC9F82A00B163DD /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1701F2A91AC9F82A00B163DD /* Singleton.swift */; };
 		173B9B5E1AC7395E005D3FBC /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173B9B5D1AC7395E005D3FBC /* Card.swift */; };
 		173B9B601AC73968005D3FBC /* Dock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173B9B5F1AC73968005D3FBC /* Dock.swift */; };
 		173B9B621AC73984005D3FBC /* Shoe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173B9B611AC73984005D3FBC /* Shoe.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1701F2A71AC9F4B200B163DD /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		1701F2A91AC9F82A00B163DD /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		173B9B5D1AC7395E005D3FBC /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		173B9B5F1AC73968005D3FBC /* Dock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dock.swift; sourceTree = "<group>"; };
 		173B9B611AC73984005D3FBC /* Shoe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shoe.swift; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 				173B9B611AC73984005D3FBC /* Shoe.swift */,
 				173B9B631AC7398B005D3FBC /* Hand.swift */,
 				173B9B651AC73990005D3FBC /* Player.swift */,
+				1701F2A71AC9F4B200B163DD /* StartViewController.swift */,
+				1701F2A91AC9F82A00B163DD /* Singleton.swift */,
 				17A36E461ABB5D9D003F642B /* Images.xcassets */,
 				17A36E481ABB5D9D003F642B /* LaunchScreen.xib */,
 				17A36E3D1ABB5D9C003F642B /* Supporting Files */,
@@ -228,6 +234,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				17A36E421ABB5D9D003F642B /* ViewController.swift in Sources */,
+				1701F2AA1AC9F82A00B163DD /* Singleton.swift in Sources */,
+				1701F2A81AC9F4B200B163DD /* StartViewController.swift in Sources */,
 				173B9B5E1AC7395E005D3FBC /* Card.swift in Sources */,
 				173B9B641AC7398B005D3FBC /* Hand.swift in Sources */,
 				173B9B601AC73968005D3FBC /* Dock.swift in Sources */,
