@@ -3,27 +3,27 @@
     {
       "idiom" : "iphone",
       "scale" : "1x",
-      "filename" : "Diamonds10.png"
+      "filename" : "back.png"
     },
     {
       "idiom" : "iphone",
       "scale" : "2x",
-      "filename" : "Diamonds10@2x.png"
+      "filename" : "back@2x.png"
     },
     {
       "idiom" : "iphone",
       "scale" : "3x",
-      "filename" : "Diamonds10@3x.png"
+      "filename" : "back@3x.png"
     },
     {
       "idiom" : "ipad",
       "scale" : "1x",
-      "filename" : "Diamonds10_big.png"
+      "filename" : "back_big.png"
     },
     {
       "idiom" : "ipad",
       "scale" : "2x",
-      "filename" : "Diamonds10_big@2x.png"
+      "filename" : "back_big@2x.png"
     }
   ],
   "info" : {

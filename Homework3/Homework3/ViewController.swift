@@ -10,12 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet weak var testImageview: UIImageView!
+    @IBOutlet weak var poker1: UIImageView!
     
     var image = UIImage(named: "Clubs1")
     override func viewDidLoad() {
         super.viewDidLoad()
         
         testImageview.image = image
+        poker1.image = image
 //        self.view.addSubview(testImageview)
     }
 
