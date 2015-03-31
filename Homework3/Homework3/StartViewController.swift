@@ -15,7 +15,6 @@ class StartViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     @IBOutlet weak var startButton: UIButton!
     
     let pickerData = [
-        ["1","2","3","4","5","6"],
         ["1","2","3","4"],
         ["Single","Multi"]
     ]
@@ -23,7 +22,7 @@ class StartViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     var sharedData:Singleton = Singleton.sharedInstance
     var playerNum:String = "2"
     var decks:String = "3"
-    var type:String = "Single"
+    var playMode:String = "Single"
     
 
     override func viewDidLoad() {
@@ -32,25 +31,26 @@ class StartViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         playerPicker.delegate = self
         playerPicker.dataSource = self
         
-        playerPicker.selectRow(1, inComponent: 0, animated: false)
-        playerPicker.selectRow(2, inComponent: 1, animated: false)
+        //set initial position
+        //select(which row, which col)
+        playerPicker.selectRow(0, inComponent: 0, animated: false)
+        playerPicker.selectRow(0, inComponent: 1, animated: false)
         
         updateLabel()
     }
     
     func updateLabel(){
-        playerNum = pickerData[0][playerPicker.selectedRowInComponent(0)]
-        decks = pickerData[1][playerPicker.selectedRowInComponent(1)]
+        decks = pickerData[0][playerPicker.selectedRowInComponent(0)]
+        playMode = pickerData[1][playerPicker.selectedRowInComponent(1)]
         sharedData.playerNum = playerNum.toInt()!
-        sharedData.deckNum = decks.toInt()!
-//        myLabel.text = "there are \(sharedData.playerNum) players and \(sharedData.deckNum) decks"
+        sharedData.playMode = playMode
+        myLabel.text = "there are \(sharedData.deckNum) decks with \(sharedData.playMode) mode"
     }
     
     
     @IBAction func startAction(sender: AnyObject) {
         updateLabel()
         sharedData.textField = "hello world!"
-        sharedData.playerNum = playerNum.toInt()!
         sharedData.deckNum = decks.toInt()!
         
     }
@@ -63,7 +63,6 @@ class StartViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     //Things related to the pickerView
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        print(pickerData.count)
         return pickerData.count
     }
     

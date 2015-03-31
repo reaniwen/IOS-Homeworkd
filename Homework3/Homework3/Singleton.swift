@@ -15,6 +15,7 @@ class Singleton {
     
     var playerNum: Int = 0
     var deckNum: Int = 0
+    var playMode: String = "Single"
     
 //    var player:Player = Player(name:"Tom")
     
