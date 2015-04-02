@@ -36,10 +36,10 @@ enum Suit: Int{
     
     func simpleDescription() -> String {
         switch self{
-        case .Spades: return "♠"
-        case .Hearts: return "♥"
-        case .Diamonds: return "♦"
-        case .Clubs: return "♣"
+        case .Spades: return "Spades"//return "♠"
+        case .Hearts: return "Hearts"//return "♥"
+        case .Diamonds: return "Diamonds"//return "♦"
+        case .Clubs: return "Clubs"//"♣"
         }
     }
 }
@@ -54,7 +54,7 @@ struct Card {
     //    }
     
     func simpleDescription() -> String {
-        return " \(suit.simpleDescription())\(rank.simpleDescription())"
+        return "\(suit.simpleDescription())\(rank.simpleDescription())"
     }
     
 }

@@ -20,14 +20,27 @@ class StartViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     ]
     
     var sharedData:Singleton = Singleton.sharedInstance
-    var playerNum:String = "2"
     var decks:String = "3"
     var playMode:String = "Single"
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        initPickerView()
+        updateLabel()
+    }
+    
+    func updateLabel(){
+        decks = pickerData[0][playerPicker.selectedRowInComponent(0)]
+        playMode = pickerData[1][playerPicker.selectedRowInComponent(1)]
+        sharedData.deckNum = decks.toInt()!
+        sharedData.playMode = playMode
+        myLabel.text = "there are \(sharedData.deckNum) decks with \(sharedData.playMode) mode"
+    }
+    
+    
+    func initPickerView(){
         playerPicker.delegate = self
         playerPicker.dataSource = self
         
@@ -35,25 +48,8 @@ class StartViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
         //select(which row, which col)
         playerPicker.selectRow(0, inComponent: 0, animated: false)
         playerPicker.selectRow(0, inComponent: 1, animated: false)
-        
-        updateLabel()
     }
     
-    func updateLabel(){
-        decks = pickerData[0][playerPicker.selectedRowInComponent(0)]
-        playMode = pickerData[1][playerPicker.selectedRowInComponent(1)]
-        sharedData.playerNum = playerNum.toInt()!
-        sharedData.playMode = playMode
-        myLabel.text = "there are \(sharedData.deckNum) decks with \(sharedData.playMode) mode"
-    }
-    
-    
-    @IBAction func startAction(sender: AnyObject) {
-        updateLabel()
-        sharedData.textField = "hello world!"
-        sharedData.deckNum = decks.toInt()!
-        
-    }
 
 
     override func didReceiveMemoryWarning() {
@@ -79,4 +75,13 @@ class StartViewController: UIViewController, UIPickerViewDataSource, UIPickerVie
     }
 
 
+}
+
+extension Array{
+    mutating func shuffle(){
+        for i in 0..<(count-1){
+            let j = Int(arc4random_uniform(UInt32(count-i))) + i
+            swap(&self[i], &self[j])
+        }
+    }
 }

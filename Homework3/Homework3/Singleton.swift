@@ -10,10 +10,6 @@ import Foundation
 
 class Singleton {
     
-    var textLabel:String = "Hello John"
-    var textField:String = "Hello Mary"
-    
-    var playerNum: Int = 0
     var deckNum: Int = 0
     var playMode: String = "Single"
     
