@@ -53,6 +53,8 @@ class PlayViewController: UIViewController {
     var player2: Player = Player()
     var players: [Player] = []
     
+    var playersUI: [PlayerUI] = []
+    
     var playerMoney: Int = 0
     var bidVal: Int = 1
     var dealerSum: Int = 0
@@ -95,6 +97,7 @@ class PlayViewController: UIViewController {
     
     @IBAction func hitAction(sender: AnyObject) {
         //give one card to player
+        giveOneCard(1)
         //give recommandation to player1
     }
 
@@ -120,21 +123,18 @@ class PlayViewController: UIViewController {
         //give two cards to dealer
         giveOneCard(0); giveOneCard(0)
         //give two cards to player1
+        giveOneCard(1); giveOneCard(1)
         //give two cards to player2
+        giveOneCard(2); giveOneCard(2)
         //give recommandation to player1
     }
     
     func giveOneCard(p: Int){
         let poker = shoe.cards[currPoker]
         println("poker.simpleDescription\(poker.simpleDescription())")
-        players[p].hand.cards.append(poker)
-        if p == 0{
-            updateImage(p, CardsUI: dCards)
-        }else if p == 1{
-            updateImage(p, CardsUI: pCards)
-        }else if p == 2{
-            updateImage(p, CardsUI: aCards)
-        }
+        playersUI[p].player.hand.cards.append(poker)
+        updateImage(p)
+        
         //update card ui
         //updateScore
         currPoker += 1
@@ -179,24 +179,23 @@ class PlayViewController: UIViewController {
         }else{
             player2 = Player(type: "Online")
         }
-        players = [dealer, player1, player2]
+        playersUI = [PlayerUI(p:dealer, cUI: dCards), PlayerUI(p: player1, cUI: pCards), PlayerUI(p: player2, cUI: aCards)]
     }
     
     func updateMultiFuncLabel(text: String){
         multiFuncLabel.text = text
     }
     
-    func updateImage(p:Int, CardsUI:[UIImageView]){
-        var count = players[p].hand.cards.count
-        var cards = players[p].hand.cards
+    func updateImage(p:Int){
+        var count = playersUI[p].player.hand.cards.count
+        var cards = playersUI[p].player.hand.cards
         var i = 0
         
         while i < count {
-            let cardname: String = cards[i].simpleDescription()
-            println("cardname \(cardname)")
-            var image = UIImage(named: "\(cardname)")
-            CardsUI[i].image = image
-            CardsUI[i].hidden = false
+            let cardName: String = cards[i].simpleDescription()
+            var image = UIImage(named: cardName)
+            playersUI[p].cardsUI[i].image = image
+            playersUI[p].cardsUI[i].hidden = false
             i += 1
         }
     }
@@ -216,4 +215,13 @@ class PlayViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+}
+
+class PlayerUI{
+    var player: Player
+    var cardsUI: [UIImageView]
+    init(p: Player, cUI:[UIImageView]){
+        player = p
+        cardsUI = cUI
+    }
 }
