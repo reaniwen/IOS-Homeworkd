@@ -41,6 +41,10 @@ class PlayViewController: UIViewController {
     @IBOutlet weak var pMoneyLabel: UILabel!
     @IBOutlet weak var multiFuncLabel: UILabel!
     
+    @IBOutlet weak var dealerSumLabel: UILabel!
+    @IBOutlet weak var player1SumLabel: UILabel!
+    @IBOutlet weak var player2SumLabel: UILabel!
+    
     var dCards:[UIImageView] = []
     var pCards:[UIImageView] = []
     var aCards:[UIImageView] = []
@@ -79,7 +83,7 @@ class PlayViewController: UIViewController {
         shoe.cards.shuffle()
         currPoker = 0
         
-        testImage("Spades10")
+//        testImage("Spades10")
     }
     
     @IBAction func moreBidAction(sender: AnyObject) {
@@ -122,8 +126,17 @@ class PlayViewController: UIViewController {
         //add a round
         //give two cards to dealer
         giveOneCard(0); giveOneCard(0)
+        
         //give two cards to player1
         giveOneCard(1); giveOneCard(1)
+        
+        let rec = giveRecommandation(1)
+        if rec == "H"{
+            updateMultiFuncLabel("Hit now")
+        }else if rec == "S"{
+            updateMultiFuncLabel("Stand now")
+        }
+        
         //give two cards to player2
         giveOneCard(2); giveOneCard(2)
         //give recommandation to player1
@@ -133,10 +146,21 @@ class PlayViewController: UIViewController {
         let poker = shoe.cards[currPoker]
         println("poker.simpleDescription\(poker.simpleDescription())")
         playersUI[p].player.hand.cards.append(poker)
+        
+        //update card ui image
         updateImage(p)
         
-        //update card ui
         //updateScore
+        updateScore(p)
+        
+        //give rec
+        let rec = giveRecommandation(1)
+        if rec == "H"{
+            updateMultiFuncLabel("Hit now")
+        }else if rec == "S"{
+            updateMultiFuncLabel("Stand now")
+        }
+        
         currPoker += 1
     }
     
@@ -179,7 +203,7 @@ class PlayViewController: UIViewController {
         }else{
             player2 = Player(type: "Online")
         }
-        playersUI = [PlayerUI(p:dealer, cUI: dCards), PlayerUI(p: player1, cUI: pCards), PlayerUI(p: player2, cUI: aCards)]
+        playersUI = [PlayerUI(p:dealer, cUI: dCards, sum: dealerSum), PlayerUI(p: player1, cUI: pCards, sum: player1Sum), PlayerUI(p: player2, cUI: aCards, sum: player2Sum)]
     }
     
     func updateMultiFuncLabel(text: String){
@@ -198,6 +222,60 @@ class PlayViewController: UIViewController {
             playersUI[p].cardsUI[i].hidden = false
             i += 1
         }
+    }
+    
+    func updateScore(p: Int) {
+        var cards = playersUI[p].player.hand.cards
+        playersUI[p].sum = 0
+        for card in cards {
+            var tempSum = playersUI[p].sum
+            let rawValue = card.rank.rawValue
+            if rawValue == 1{
+                playersUI[p].player.hand.containAce = true
+                playersUI[p].player.hand.aceCounted = true
+                tempSum += 11
+            }else if rawValue >= 10{
+                tempSum += 10
+            }else {
+                tempSum += rawValue
+            }
+            if tempSum > 21 {
+                if playersUI[p].player.hand.containAce && playersUI[p].player.hand.aceCounted {
+                    tempSum -= 10
+                    playersUI[p].player.hand.aceCounted = false
+                }
+            }
+            playersUI[p].sum = tempSum
+            println("score for \(p) is \(playersUI[p].sum)")
+        }
+        dealerSumLabel.text = "\(playersUI[0].sum)"
+        player1SumLabel.text = "\(playersUI[1].sum)"
+        player2SumLabel.text = "\(playersUI[2].sum)"
+    }
+    
+    func giveRecommandation(p:Int) -> String {
+        //return "H" or "S" to stand for hit or stand
+        var rec: String = ""
+        
+        let base = playersUI[0].player.hand.cards[0].rank.rawValue
+        let sum = playersUI[p].sum
+        if sum <= 11 {
+            rec = "H"
+        }else if sum >= 17 {
+            rec = "S"
+        }else if base == 1 || base >= 7 {
+            rec = "H"
+        }else {
+            rec = "S"
+        }
+        println("Recommandation is \(rec)")
+//        if base > 10 {
+//            rec = "S"
+//        }else {
+//            rec = "H"
+//        }
+        
+        return rec
     }
     
     func testImage(name: String){
@@ -220,8 +298,11 @@ class PlayViewController: UIViewController {
 class PlayerUI{
     var player: Player
     var cardsUI: [UIImageView]
-    init(p: Player, cUI:[UIImageView]){
+    var sum: Int
+    
+    init(p: Player, cUI:[UIImageView], sum: Int){
         player = p
         cardsUI = cUI
+        self.sum = sum
     }
 }
