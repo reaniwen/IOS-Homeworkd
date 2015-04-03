@@ -102,18 +102,52 @@ class PlayViewController: UIViewController {
     @IBAction func hitAction(sender: AnyObject) {
         //give one card to player
         giveOneCard(1)
+        
         //give recommandation to player1
+        //give rec
+        if !isBusted(1){
+            let rec = satRecommandation(1)
+            if rec == "H"{
+                updateMultiFuncLabel("Hit now")
+            }else if rec == "S"{
+                updateMultiFuncLabel("Stand now")
+            }
+
+        }
     }
 
     @IBAction func standAction(sender: AnyObject) {
+        afterStand()
+    }
+    func afterStand(){
+        hitBtn.hidden = true
+        standBtn.hidden = true
         //if single, AI move for player2
-        //if multi, wait for online move
+        if sharedData.playMode ==  "Single" {
+            var rec: String = satRecommandation(2)
+            while rec == "H" && playersUI[2].player.hand.cards.count <= 5{
+                giveOneCard(2)
+                rec = satRecommandation(2)
+            }
+        }else {
+            updateMultiFuncLabel("Waiting for the other player")
+        }
+        
         //dealer move
+        while playersUI[0].sum < 16 && playersUI[0].player.hand.cards.count <= 5 {
+            giveOneCard(0)
+        }
+        
+        //judge win or lose
+        judgeWin()
+        
+        moreBidBtn.hidden = false
+        lessBidBtn.hidden = false
+        
+        //start a new round
     }
     
     @IBAction func resetAction(sender: AnyObject) {
-        //initCards()
-        //initGame()
         dismissViewControllerAnimated(true, completion: nil)
     }
     
@@ -122,7 +156,7 @@ class PlayViewController: UIViewController {
         standBtn.hidden = false
         moreBidBtn.hidden = true
         lessBidBtn.hidden = true
-        startBtn.hidden = true
+        startBtn.enabled = false
         //add a round
         //give two cards to dealer
         giveOneCard(0); giveOneCard(0)
@@ -130,22 +164,30 @@ class PlayViewController: UIViewController {
         //give two cards to player1
         giveOneCard(1); giveOneCard(1)
         
-        let rec = giveRecommandation(1)
+        let rec = satRecommandation(1)
         if rec == "H"{
             updateMultiFuncLabel("Hit now")
         }else if rec == "S"{
             updateMultiFuncLabel("Stand now")
         }
         
+        
         //give two cards to player2
         giveOneCard(2); giveOneCard(2)
         //give recommandation to player1
+        if isBlackJack(1) {
+            updateMultiFuncLabel("BlackJack!")
+            afterStand()
+        }
     }
     
     func giveOneCard(p: Int){
         let poker = shoe.cards[currPoker]
         println("poker.simpleDescription\(poker.simpleDescription())")
         playersUI[p].player.hand.cards.append(poker)
+//        if playersUI[p].player.hand.cards.count == 5 {
+//            hitBtn.enabled = false
+//        }
         
         //update card ui image
         updateImage(p)
@@ -153,12 +195,10 @@ class PlayViewController: UIViewController {
         //updateScore
         updateScore(p)
         
-        //give rec
-        let rec = giveRecommandation(1)
-        if rec == "H"{
-            updateMultiFuncLabel("Hit now")
-        }else if rec == "S"{
-            updateMultiFuncLabel("Stand now")
+        if p == 1 {
+            if isBusted(1) {
+                afterStand()
+            }
         }
         
         currPoker += 1
@@ -207,6 +247,7 @@ class PlayViewController: UIViewController {
     }
     
     func updateMultiFuncLabel(text: String){
+        println("The functional label will be '\(text)")
         multiFuncLabel.text = text
     }
     
@@ -253,7 +294,22 @@ class PlayViewController: UIViewController {
         player2SumLabel.text = "\(playersUI[2].sum)"
     }
     
-    func giveRecommandation(p:Int) -> String {
+    func isBlackJack(p: Int) -> Bool{
+        let player = playersUI[p].player
+        if playersUI[p].sum == 21 && player.hand.containAce {
+            return true
+        }else{ return false }
+    }
+    
+    func isBusted(p: Int) -> Bool {
+        let player = playersUI[p]
+        if player.sum > 21 {
+            updateMultiFuncLabel("Busted!")
+            return true
+        }else{ return false}
+    }
+    
+    func satRecommandation(p:Int) -> String {
         //return "H" or "S" to stand for hit or stand
         var rec: String = ""
         
@@ -269,14 +325,15 @@ class PlayViewController: UIViewController {
             rec = "S"
         }
         println("Recommandation is \(rec)")
-//        if base > 10 {
-//            rec = "S"
-//        }else {
-//            rec = "H"
-//        }
+
         
         return rec
     }
+    
+    func judgeWin(){
+    
+    }
+    
     
     func testImage(name: String){
         var image = UIImage(named: name)
