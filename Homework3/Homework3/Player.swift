@@ -11,7 +11,7 @@ import Foundation
 class Player{
     var hand: Hand = Hand()
     var name: String = ""
-    var money: Int = 100
+    var money: Int = 99
     var shown: Bool = false
     
     init(){

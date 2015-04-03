@@ -88,15 +88,19 @@ class PlayViewController: UIViewController {
     
     @IBAction func moreBidAction(sender: AnyObject) {
         bidVal += 1
+        playersUI[1].player.money -= 1
         updateMultiFuncLabel("Bid: $\(bidVal)")
+        pMoneyLabel.text = "$\(playersUI[1].player.money)"
     }
     
     
     @IBAction func lessBidAction(sender: AnyObject) {
         if bidVal > 1{
             bidVal -= 1
+            playersUI[1].player.money += 1
         }
         updateMultiFuncLabel("Bid: $\(bidVal)")
+        pMoneyLabel.text = "$\(playersUI[1].player.money)"
     }
     
     @IBAction func hitAction(sender: AnyObject) {
@@ -120,8 +124,8 @@ class PlayViewController: UIViewController {
         afterStand()
     }
     func afterStand(){
-        hitBtn.hidden = true
-        standBtn.hidden = true
+        dealerSumLabel.hidden = false
+
         //if single, AI move for player2
         if sharedData.playMode ==  "Single" {
             var rec: String = satRecommandation(2)
@@ -139,12 +143,44 @@ class PlayViewController: UIViewController {
         }
         
         //judge win or lose
-        judgeWin()
-        
-        moreBidBtn.hidden = false
-        lessBidBtn.hidden = false
+        let res = judgeWin()
         
         //start a new round
+        startNewRound(res)
+    }
+    
+    func startNewRound(res: String) {
+        hitBtn.hidden = true
+        standBtn.hidden = true
+        moreBidBtn.hidden = false
+        lessBidBtn.hidden = false
+        bidVal = 1
+        playersUI[1].player.money -= 1
+        pMoneyLabel.text = "$\(playersUI[1].player.money)"
+        updateMultiFuncLabel("\(res) Bid: $1")
+        startBtn.enabled = true
+        
+        for card in dCards {
+            card.hidden = true
+        }
+        for card in pCards {
+            card.hidden = true
+        }
+        for card in aCards {
+            card.hidden = true
+        }
+        
+        for i in 0...2 {
+            playersUI[i].sum = 0
+            playersUI[i].player.hand.cards = []
+            updateImage(i)
+            updateScore(i)
+        }
+        gameRound += 1
+        if gameRound == 5 {
+            shoe.cards.shuffle()
+            currPoker = 0
+        }
     }
     
     @IBAction func resetAction(sender: AnyObject) {
@@ -160,6 +196,9 @@ class PlayViewController: UIViewController {
         //add a round
         //give two cards to dealer
         giveOneCard(0); giveOneCard(0)
+        let image = UIImage(named: "back")
+        dCard2.image = image
+        dealerSumLabel.hidden = true
         
         //give two cards to player1
         giveOneCard(1); giveOneCard(1)
@@ -330,8 +369,47 @@ class PlayViewController: UIViewController {
         return rec
     }
     
-    func judgeWin(){
-    
+    func judgeWin() -> String{
+        var res = ""
+        if isBusted(1) {
+            //player lose
+            res = "Lose"
+        }else if isBlackJack(1){
+            if  !isBlackJack(0) {
+                //player win
+                updateMultiFuncLabel("YOU WIN!")
+                (playersUI[1].player.money) += (bidVal * 2)
+                res = "Win"
+            }else {
+                //tie
+                updateMultiFuncLabel("Tie!")
+                (playersUI[1].player.money) += bidVal
+                res = "Tie"
+            }
+        }else if playersUI[1].sum > playersUI[0].sum {
+            //player win
+            updateMultiFuncLabel("YOU WIN!")
+            (playersUI[1].player.money) += (bidVal * 2)
+            res = "Win"
+        }else if playersUI[1].sum < playersUI[0].sum {
+            if playersUI[0].sum > 21 {
+                //player win
+                updateMultiFuncLabel("YOU WIN!")
+                (playersUI[1].player.money) += (bidVal * 2)
+                res = "Win"
+            }else {
+                //player lose
+                updateMultiFuncLabel("YOU LOSE")
+                res = "Lose"
+            }
+        }else if playersUI[1].sum == playersUI[0].sum {
+            //tie
+            updateMultiFuncLabel("Tie！")
+            (playersUI[1].player.money) += bidVal
+            res = "Tie"
+        }
+        pMoneyLabel.text = "$\(playersUI[1].player.money)"
+        return res
     }
     
     

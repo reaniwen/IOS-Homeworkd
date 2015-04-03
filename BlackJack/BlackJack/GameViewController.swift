@@ -67,7 +67,7 @@ class GameViewController: UIViewController {
     
     var sharedData:Singleton = Singleton.sharedInstance
     var playerNum: Int = 1
-    var deckNum: Int = 1
+    0...{}
     var shoe: Shoe = Shoe()
     
     var currPlayer: Int = 0
